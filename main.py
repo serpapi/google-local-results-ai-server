@@ -49,7 +49,7 @@ for model_name in models.keys():
             raise HTTPException(status_code=400, detail=error_message)
                 
         output = classifiers[model_name](input_data.inputs, top_k=len(classifiers[model_name].model.config.id2label))
-        return output
+        return [output]
 
 if __name__ == "__main__":
     import uvicorn
