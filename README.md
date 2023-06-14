@@ -14,10 +14,9 @@
 This repository contains the code for a server that mimics the Inference API endpoints at Huggingface for BERT-based classification models. The server provides a simple interface to perform text classification using BERT models. It is designed by [SerpApi](https://serpapi.com/) for the heavy-load prototyping, and production tasks for the implementation of [`google-local-results-ai-parser` gem](https://github.com/serpapi/google-local-results-ai-parser) which uses [`serpapi/bert-base-local-results` model](https://huggingface.co/serpapi/bert-base-local-results).
 
 
-
-
 <div align="center"><b>Relevant Sources</b></div>
 
+- [**Docker Image**](https://hub.docker.com/r/kagermanov27/googlelocalresultsaiserver)
 - [**Google Local Results AI Parser**](https://github.com/serpapi/google-local-results-ai-parser): Ruby Gem for extracting structured data from Google Local Search Results using the [`serpapi/bert-base-local-results` transformer model]
 - [**BERT-Based Classification Model for Google Local Listings**](https://huggingface.co/serpapi/bert-base-local-results): BERT-based classification model developed using the Hugging Face library, and a dataset gathered by SerpApi's Google Local API.
 - [**BERT**](https://huggingface.co/docs/transformers/model_doc/bert): A language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers.
@@ -62,7 +61,7 @@ The server will start running on `http://localhost:8000`.
 
 Alternatively, you can deploy the Google Local Results AI Server using Docker. The repository already contains a Dockerfile for easy deployment.
 
-An already-built image link will be added to the documentation soon.
+You may find the built image at [**Docker Image**](https://hub.docker.com/r/kagermanov27/googlelocalresultsaiserver).
 
 To build the image, and deploy the server with Docker locally, follow these steps:
 - Build the Docker image:
@@ -197,7 +196,7 @@ curl http://127.0.0.1:8000/models/serpapi/bert-base-local-results \
 ---
 <h2 align="center">Advanced Usage</h2>
 
-The server code provided in this repository supports advanced usage, allowing you to extend the models served by adding more BERT-based classification models. However, please note that the existing models are hardcoded with their paths in the code. The current model, "google/bert-base-local-results", is located at ./google/bert-base-local-results.
+The server code provided in this repository supports advanced usage, allowing you to extend the models served by adding more BERT-based classification models. However, please note that the existing models are hardcoded with their paths in the code. The current model, `google/bert-base-local-results`, is located at `./google/bert-base-local-results`.
 
 To add more models, follow these steps:
 
