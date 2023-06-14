@@ -17,7 +17,7 @@ This repository contains the code for a server that mimics the Inference API end
 <div align="center"><b>Relevant Sources</b></div>
 
 - [**Docker Image**](https://hub.docker.com/r/kagermanov27/googlelocalresultsaiserver)
-- [**Google Local Results AI Parser**](https://github.com/serpapi/google-local-results-ai-parser): Ruby Gem for extracting structured data from Google Local Search Results using the [`serpapi/bert-base-local-results` transformer model]
+- [**Google Local Results AI Parser**](https://github.com/serpapi/google-local-results-ai-parser): Ruby Gem for extracting structured data from Google Local Search Results using the `serpapi/bert-base-local-results` transformer model
 - [**BERT-Based Classification Model for Google Local Listings**](https://huggingface.co/serpapi/bert-base-local-results): BERT-based classification model developed using the Hugging Face library, and a dataset gathered by SerpApi's Google Local API.
 - [**BERT**](https://huggingface.co/docs/transformers/model_doc/bert): A language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers.
 - [**SerpApi's Google Local Results API Documentation**](https://serpapi.com/google-local-api): A documentation on SerpApi's Scraper API for Google Local Search Results. The model within the repository has been created using this tool.
