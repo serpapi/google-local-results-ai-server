@@ -64,14 +64,20 @@ Alternatively, you can deploy the Google Local Results AI Server using Docker. T
 You may find the built image at [**Docker Image**](https://hub.docker.com/r/kagermanov27/googlelocalresultsaiserver).
 
 To build the image, and deploy the server with Docker locally, follow these steps:
-- Build the Docker image:
+- **Set the necessary environment variables at `main.py`:**
+```py
+# Master key to keep track of access
+MASTER_KEY = "master_key"
+```
+
+- **Build the Docker image**:
 ```bash
 docker build -t google-local-results-ai-server .
 ```
 
-- Run the Docker container:
+- **Run the Docker container**:
 ```bash
-docker run -p 8000:8000 -e MASTER_KEY=<your-master-key> google-local-results-ai-server
+docker run -p 8000:8000 google-local-results-ai-server
 ```
 
 The server will start running on `http://localhost:8000`.
