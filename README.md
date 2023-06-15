@@ -16,7 +16,6 @@ This repository contains the code for a server that mimics the Inference API end
 
 <div align="center"><b>Relevant Sources</b></div>
 
-- [**Docker Image**](https://hub.docker.com/r/kagermanov27/googlelocalresultsaiserver)
 - [**Google Local Results AI Parser**](https://github.com/serpapi/google-local-results-ai-parser): Ruby Gem for extracting structured data from Google Local Search Results using the `serpapi/bert-base-local-results` transformer model
 - [**BERT-Based Classification Model for Google Local Listings**](https://huggingface.co/serpapi/bert-base-local-results): BERT-based classification model developed using the Hugging Face library, and a dataset gathered by SerpApi's Google Local API.
 - [**BERT**](https://huggingface.co/docs/transformers/model_doc/bert): A language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers.
@@ -27,8 +26,8 @@ This repository contains the code for a server that mimics the Inference API end
 To set up and run the Google Local Results AI Server locally, follow these steps:
 - **Clone the repository**:
 ```bash
-git clone https://github.com/serpapi/google-local-results-ai-server.git
 cd google-local-results-ai-server
+git clone git clone https://huggingface.co/serpapi/bert-base-local-results ./google/bert-base-local-results
 ```
 
 - **Create and activate a virtual environment (optional but recommended)**:
@@ -48,12 +47,20 @@ pip install -r requirements.txt
 MASTER_KEY = "master_key"
 ```
 
+- **Clone the contents of the [Huggingface Repository](https://huggingface.co/serpapi/bert-base-local-results) to `google/bert-base-local-results` folder.**
+```bash
+cd google
+# Make sure you have git-lfs installed (https://git-lfs.com)
+git lfs install
+git clone https://huggingface.co/serpapi/bert-base-local-results
+```
+
 - **Start the server using gunicorn:**
 ```bash
 gunicorn main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0
 ```
 
-The server will start running on `http://localhost:8000`.
+You may set the number of workers depending on your system allowace. The server will start running on `http://localhost:8000`.
 
 ---
 
@@ -61,7 +68,7 @@ The server will start running on `http://localhost:8000`.
 
 Alternatively, you can deploy the Google Local Results AI Server using Docker. The repository already contains a Dockerfile for easy deployment.
 
-You may find the built image at [**Docker Image**](https://hub.docker.com/r/kagermanov27/googlelocalresultsaiserver).
+A Docker Image will be created and published in the repository.
 
 To build the image, and deploy the server with Docker locally, follow these steps:
 - **Set the necessary environment variables at `main.py`:**
@@ -74,6 +81,9 @@ MASTER_KEY = "master_key"
 ```bash
 docker build -t google-local-results-ai-server .
 ```
+
+- **Optional: Change the number of workers depending on your system allowance in `Dockerfile`. Here's an example with 2 workers:
+  - `CMD ["gunicorn", "main:app", "--workers", "2", "--worker-class", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0"]`
 
 - **Run the Docker container**:
 ```bash
