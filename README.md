@@ -11,6 +11,10 @@
  
 </div>
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/73674035/247621175-3b738b9c-499e-43c9-a45a-49a9a1f2f7c8.png" alt="AI Model Server" width="50%"/>
+</p>
+
 This repository contains the code for a server that mimics the Inference API endpoints at Huggingface for BERT-based classification models. The server provides a simple interface to perform text classification using BERT models. It is designed by [SerpApi](https://serpapi.com/) for the heavy-load prototyping, and production tasks for the implementation of [`google-local-results-ai-parser` gem](https://github.com/serpapi/google-local-results-ai-parser) which uses [`serpapi/bert-base-local-results` model](https://huggingface.co/serpapi/bert-base-local-results).
 
 
@@ -49,10 +53,10 @@ MASTER_KEY = "master_key"
 
 - **Clone the contents of the [Huggingface Repository](https://huggingface.co/serpapi/bert-base-local-results) to `google/bert-base-local-results` folder.**
 ```bash
-cd google
 # Make sure you have git-lfs installed (https://git-lfs.com)
 git lfs install
-git clone https://huggingface.co/serpapi/bert-base-local-results
+git lfs pull
+git clone https://huggingface.co/serpapi/bert-base-local-results google/bert-base-local-results
 ```
 
 - **Start the server using gunicorn:**
