@@ -1,5 +1,5 @@
 fastapi==0.97.0
-transformers==4.30.1
+transformers==4.36.0
 transformers[torch]
 gunicorn==20.1.0
 uvicorn==0.22.0
