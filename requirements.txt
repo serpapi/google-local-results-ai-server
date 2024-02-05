@@ -1,4 +1,4 @@
-fastapi==0.97.0
+fastapi==0.109.1
 transformers==4.36.0
 transformers[torch]
 gunicorn==20.1.0
